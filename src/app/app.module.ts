@@ -9,10 +9,12 @@ import { FooterComponent } from './footer/footer.component';
 
 // importar las rutas
 import { RouterModule, Routes } from '@angular/router';
+import { RegisterComponent } from './register/register.component';
 
 
 const appRoutes: Routes = [
-{ path: '', component: HomeComponent }, 
+{ path: '', component: HomeComponent },
+{ path: 'register', component: RegisterComponent },  
 { path: 'login', component: LoginComponent }  
 ];
 
@@ -24,7 +26,8 @@ const appRoutes: Routes = [
   HomeComponent,
   LoginComponent,
   NavbarComponent,
-  FooterComponent
+  FooterComponent,
+  RegisterComponent
   ],
   imports: [
   BrowserModule,
