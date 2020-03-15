@@ -7,16 +7,31 @@ import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 
+// importar las rutas
+import { RouterModule, Routes } from '@angular/router';
+
+
+const appRoutes: Routes = [
+{ path: '', component: HomeComponent }, 
+{ path: 'login', component: LoginComponent }  
+];
+
+
+// colocar aqui los modulos para poder usarlos luegos del import arriba
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent,
-    LoginComponent,
-    NavbarComponent,
-    FooterComponent
+  AppComponent,
+  HomeComponent,
+  LoginComponent,
+  NavbarComponent,
+  FooterComponent
   ],
   imports: [
-    BrowserModule
+  BrowserModule,
+  RouterModule.forRoot(
+    appRoutes,
+    { enableTracing: true } // <-- debugging purposes only
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
